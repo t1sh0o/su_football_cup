@@ -5,15 +5,15 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use App\Post;
+use App\Tag;
 
-class PostsController extends Controller {
+class TagsController extends Controller {
 
-	public $post;
+	public $tag;
 
-	public function __construct(Post $post)
+	public function __construct(Tag $tag)
 	{
-		$this->post = $post;
+		$this->tag = $tag;
 	}
 
 	/**
@@ -23,9 +23,7 @@ class PostsController extends Controller {
 	 */
 	public function index()
 	{
-		$posts = $this->post->paginate(15);
-
-		return view('posts.posts', compact('posts'));
+			//
 	}
 
 	/**
@@ -54,11 +52,11 @@ class PostsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($slug)
+	public function show($id)
 	{
-		$post = $this->post->where('slug', $slug)->with('tags')->firstOrFail();
-
-		return view('posts.post', compact('post'));
+		$posts = $this->tag->find($id)->posts;
+		
+		return view('posts.posts', compact('posts'));
 	}
 
 	/**

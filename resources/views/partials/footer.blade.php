@@ -8,6 +8,6 @@
 
     </div>
 
-    <div class="pull-right">Powered by Taho(at)Donatix © All right reserved to SU Football Cup 2011 - {{ date('Y') }}</div>
+    <div class="pull-right">Powered by Taho(at)Donatix ltd © All right reserved to SU Football Cup 2011 - {{ date('Y') }}</div>
 
 </footer>
